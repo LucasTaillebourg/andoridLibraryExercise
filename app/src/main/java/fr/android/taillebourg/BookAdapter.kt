@@ -21,6 +21,7 @@ class BookAdapter(private val context: Context, private val books: List<Book>) :
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BookViewHolder {
         Log.d("BOOK","Book : yo2")
         val view = LayoutInflater.from(parent.context).inflate(R.layout.book_list_item_lay, parent, false)
+
         bookSelectedListener = context as OnBookSelected
 
         return BookViewHolder(view)

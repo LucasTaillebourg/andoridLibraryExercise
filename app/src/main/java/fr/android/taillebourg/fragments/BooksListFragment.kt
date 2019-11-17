@@ -24,8 +24,8 @@ class BooksListFragment : Fragment() {
 
     private val booksList: ArrayList<Book> = ArrayList()
 
-    private var bookAdapter: RecyclerView.Adapter<*>? = null
     private var booksListRecyclerView: RecyclerView? = null
+    private var bookAdapter: RecyclerView.Adapter<*>? = null
 
     override fun onAttach(context: Context) {
         Log.d("STATE","STATE : onAttach")
@@ -44,8 +44,6 @@ class BooksListFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        Log.d("STATE","STATE : onViewCreated")
 
         bookAdapter = BookAdapter(this.context!!, booksList)
         booksListRecyclerView!!.adapter = bookAdapter
