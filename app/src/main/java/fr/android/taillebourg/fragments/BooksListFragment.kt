@@ -62,7 +62,6 @@ class BooksListFragment : Fragment() {
         val service: HenriPotierService = retrofit.create(HenriPotierService::class.java)
 
         val res = service.listBooks()
-        val books: ArrayList<Book> = ArrayList()
 
         res.enqueue(object: Callback<List<Book>> {
             override fun onResponse(call: Call<List<Book>>, response: Response<List<Book>>) {
@@ -70,7 +69,7 @@ class BooksListFragment : Fragment() {
                 allBooks?.let {
                     for( book in it) {
                         Log.d("BOOK","Book : ${book.title}")
-                        books.add(book)
+                        booksList.add(book)
                     }
                     Log.d("STATE","STATE : book fetched")
                     bookAdapter?.notifyDataSetChanged()
